@@ -6,11 +6,11 @@
 
 >：點擊下方連結，會自動呼叫 Tampermonkey 安裝視窗。
 
-此腳本需要搭配Tampermonkey使用Tampermonkey](https://www.tampermonkey.net/)。
+此腳本需要搭配Tampermonkey使用[Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo))。
 
 ### [ 🥵點此安裝脚本](https://raw.githubusercontent.com/stevewukc0789-png/-mis-/main/mis-auto-fill.user.js)
 
-若點擊後沒有出現安裝視窗，請確認已安裝 [Tampermonkey](https://www.tampermonkey.net/)。
+若點擊後沒有出現安裝視窗，請確認已安裝 [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo))。
 
 ---
 安裝說明
