@@ -11,10 +11,12 @@
 若點擊後沒有出現安裝視窗，請確認已安裝 [Tampermonkey](https://www.tampermonkey.net/)。
 
 ---
-有部份mis版本無法使用
+安裝說明
+
+
 ---
 ## 使用說明
-
+https://drive.google.com/file/d/1XZayafrvjOphBA-bqbaZV9W2bk0u0Cz6/view?usp=sharing
 1. 先點開一份問卷，確認題目已顯示
 2. 點擊右下角的蓋色按鈕開始
 3. 執行中按鈕會變紅並顯示進度，可點擊停止
