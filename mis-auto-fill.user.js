@@ -246,7 +246,7 @@
   function resetButton(btn) {
     isRunning = false;
     isCancelled = false;
-    btn.textContent = '⚡ 一鍵全選非常同意';
+    btn.textContent = '一鍵全選非常同意';
     btn.style.backgroundColor = '#2563eb';
   }
 
