@@ -1,6 +1,6 @@
 # 無界塾 MIS 問卷自動填寫
 
-這是一個適用於 [Tampermonkey](https://www.tampermonkey.net/) (串改猴 / 油猴) 的使用者脚本，可自動將無界塾 MIS 問卷全部勾選「非常同意」。
+這是一個適用於 [Tampermonkey](https://www.tampermonkey.net/) 使用者脚本，可自動將無界塾 MIS 問卷全部勾選「非常同意」。
 
 ## 直接安裝到串改猴
 
