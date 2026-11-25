@@ -11,8 +11,8 @@
 若點擊後沒有出現安裝視窗，請確認已安裝 [Tampermonkey](https://www.tampermonkey.net/)。
 
 ---
-
-
+有部份mis版本無法使用
+---
 ## 使用說明
 
 1. 先點開一份問卷，確認題目已顯示
