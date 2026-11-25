@@ -20,7 +20,7 @@
 ## 使用說明
 https://drive.google.com/file/d/1XZayafrvjOphBA-bqbaZV9W2bk0u0Cz6/view?usp=sharing
 1. 先點開一份問卷，確認題目已顯示
-2. 點擊右下角的蓋色按鈕開始
+2. 點擊右下角的藍色按鈕開始
 3. 執行中按鈕會變紅並顯示進度，可點擊停止
 4. 完成後請務必確認最後一題，並手動填寫下方質性回饋與學生自評
 
