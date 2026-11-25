@@ -23,10 +23,6 @@
 若點擊後沒有出現安裝視窗，請確認已安裝 [Tampermonkey](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo))。
 
 ---
-安裝說明
-
-
----
 
 - 若出現逾時，請重新裝載頁面再試一次
 
