@@ -2,7 +2,7 @@
 // @name         無界塾 MIS 問卷自動填寫
 // @namespace    https://mis.btsflip.org/
 // @version      3.0
-// @description  偵測 AJAX 與「正在存檔」狀態，安全逐題勾選非常同意（
+// @description  偵測 AJAX 與「正在存檔」狀態，安全逐題勾選非常同意
 // @match        https://mis.btsflip.org/*
 // @grant        none
 // ==/UserScript==
@@ -14,9 +14,7 @@
     return;
   }
 
-  // 每題勾選完後的緩衝時間（毫秒），可依網速調整（預設 350ms）
   var AFTER_SELECT_WAIT_MS = 350;
-  // 等待「正在存檔」或選項展開的最長時間（毫秒）
   var MAX_WAIT_MS = 10000;
 
   var isRunning = false;
@@ -37,7 +35,6 @@
         return false;
       }
     } catch (e) {
-      // 忽略樣式讀取異常
     }
     var rect = el.getBoundingClientRect();
     return rect.width > 0 && rect.height > 0;
@@ -62,7 +59,6 @@
         try {
           getAllWindows(win.frames[i], list);
         } catch (e1) {
-          // 忽略單一跨網域 frame
         }
       }
 
@@ -73,32 +69,26 @@
             getAllWindows(iframes[j].contentWindow, list);
           }
         } catch (e2) {
-          // 忽略跨網域 iframe
         }
       }
     } catch (e3) {
-      // 忽略
     }
     return list;
   }
 
-  // 檢查是否有進行中的 AJAX 請求或「正在存檔」提示畫面
   function isSystemBusy() {
     var wins = getAllWindows(window.top, []);
     for (var i = 0; i < wins.length; i++) {
       var w = wins[i];
       try {
-        // 1. 檢查 jQuery AJAX 進行中數量
         var jq = w.jQuery || w.$;
         if (jq && typeof jq.active === 'number' && jq.active > 0) {
           return true;
         }
       } catch (e1) {
-        // 忽略
       }
 
       try {
-        // 2. 檢查畫面上是否顯示「正在存檔 / 存檔中 / 處理中」
         var doc = w.document;
         var nodes = doc.querySelectorAll('div, span, p, h3, h4, td, label');
         for (var n = 0; n < nodes.length; n++) {
@@ -121,13 +111,11 @@
           }
         }
       } catch (e2) {
-        // 忽略
       }
     }
     return false;
   }
 
-  // 輪詢直到系統空閒（或逾時／被取消）
   function waitUntilIdle(onReady, onTimeout) {
     var start = Date.now();
     function check() {
@@ -212,7 +200,6 @@
     return items;
   }
 
-  // 透過題目文字重新找活著的 DOM 列，避免存檔重繪後操作失效節點
   function getLiveItem(questionList, index) {
     var targetText = questionList[index];
     var currentItems = scanSurveyItems();
@@ -225,7 +212,6 @@
   }
 
   function findAgreeOption(row) {
-    // 優先找 label 或 button，避免點到內層 span 重複觸發
     var primaries = row.querySelectorAll('label, button');
     var i;
     for (i = 0; i < primaries.length; i++) {
@@ -265,7 +251,6 @@
   }
 
   function autoFillSurvey(btn) {
-    // 執行中再按一次可立即停止
     if (isRunning) {
       isCancelled = true;
       resetButton(btn);
@@ -307,7 +292,6 @@
           return;
         }
 
-        // 若系統正在存檔上一題，耐心等待，絕不重複點擊
         if (isSystemBusy()) {
           if (Date.now() - start >= MAX_WAIT_MS) {
             onFail();
@@ -323,7 +307,6 @@
           return;
         }
 
-        // 若系統已空閒但超過 1.5 秒仍沒展開，只溫和補點一次分數格
         if (!retriedRowClick && Date.now() - start >= 1500) {
           retriedRowClick = true;
           live.scoreCell.click();
@@ -361,7 +344,6 @@
 
       btn.textContent = '⏹ 停止 (' + (index + 1) + '/' + questionList.length + ')';
 
-      // 每題開始前先確定上一題已經存檔完成
       waitUntilIdle(
         function () {
           var live = getLiveItem(questionList, index);
@@ -376,7 +358,6 @@
             live.row.scrollIntoView();
           }
 
-          // 情況 A：該列已經填好並顯示純文字「非常同意」
           var existingOpt = findAgreeOption(live.row);
           if (!existingOpt && cleanText(live.scoreCell.textContent) === '非常同意') {
             filledCount++;
@@ -390,7 +371,6 @@
             if (isCancelled) {
               return;
             }
-            // 只單擊一次，完全不補發多餘的 change 事件
             if (!opt.alreadySelected) {
               opt.clickTarget.click();
             }
@@ -408,13 +388,11 @@
             }, AFTER_SELECT_WAIT_MS);
           }
 
-          // 情況 B：該列目前已經是展開狀態
           if (existingOpt) {
             selectAndNext(existingOpt);
             return;
           }
 
-          // 情況 C：單擊分數格一次，靜待上一題存檔完成與本題展開
           live.scoreCell.click();
           waitForOptionOpen(
             index,
