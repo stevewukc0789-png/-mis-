@@ -1,5 +1,7 @@
 # 無界塾 MIS 問卷自動填寫
 
+此腳本製作者為@Stevewung
+
 這是一個適用於 [Tampermonkey](https://www.tampermonkey.net/) 使用者脚本，可自動將無界塾 MIS 問卷全部勾選「非常同意」。
 
 ## 直接安裝到Tampermonkey
