@@ -5,7 +5,7 @@
 這是一個適用於 [Tampermonkey](https://www.tampermonkey.net/) 使用者脚本，可自動將無界塾 MIS 問卷全部勾選「非常同意」。
 
 ## 使用說明
-https://drive.google.com/file/d/1XZayafrvjOphBA-bqbaZV9W2bk0u0Cz6/view?usp=sharing
+示範影片：https://drive.google.com/file/d/1XZayafrvjOphBA-bqbaZV9W2bk0u0Cz6/view?usp=sharing
 1. 先點開一份問卷，確認題目已顯示
 2. 點擊右下角的藍色按鈕開始
 3. 執行中按鈕會變紅並顯示進度，可點擊停止
