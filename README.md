@@ -12,7 +12,7 @@ https://drive.google.com/file/d/1XZayafrvjOphBA-bqbaZV9W2bk0u0Cz6/view?usp=shari
 4. 完成後請務必確認最後一題，並手動填寫下方質性回饋與學生自評
 --
 
-## 直接安裝到Tampermonkey
+## 安裝程式
 
 >：點擊下方連結，會自動呼叫 Tampermonkey 安裝視窗。
 
